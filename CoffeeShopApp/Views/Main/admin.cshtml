@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+</head>
+<body>
+    <div> <table border="1">
+    @foreach (var item in ViewBag.ProductList)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                <a href="/Main/Delete?product=@item.Name" onclick="return confirm('Are you sure? you want to deletete')">Delete</a>
+            </td>
+        </tr>
+
+    }
+
+</table>
+    <a href="/Main/addproduct"> Add a new product</a>
+
+    </div>
+</body>
+</html>
